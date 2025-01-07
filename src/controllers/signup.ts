@@ -13,6 +13,7 @@ export const createAccount = async (req:Request, res:Response) => {
     }
 
     const userDocument = await User.findOne({email});
+    console.log(userDocument)
     if (userDocument) {
          res.status(400).send("User already exists");
          return;

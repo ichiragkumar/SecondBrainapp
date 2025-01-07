@@ -1,7 +1,7 @@
 import Content from "../models/ContentModel";
 
-
-export const deleteContent = async (req:any, res:any) => {
+import { Request, Response } from "express";
+export const deleteContent = async (req:Request, res:Response) => {
     try{
         const { id } = req.query;
 
@@ -17,12 +17,17 @@ export const deleteContent = async (req:any, res:any) => {
             return;
         }
 
-        if(req.userId !== content.userId){
+
+       
+        //@ts-ignore
+        if(req.userId != content.userId){
             res.status(401).send({message: "You are not authorized to delete this content"});
             return;
         }
-        content.isActive = false;
 
+
+
+        content.isActive = false;
         await content.save();
         res.status(200).send({message: "Content deleted successfully"});
         return;

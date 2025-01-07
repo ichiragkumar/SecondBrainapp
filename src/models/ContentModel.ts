@@ -8,7 +8,12 @@ const contentSchema = new Schema({
   title: { type: String, required: true },
   tags: [{ type: Types.ObjectId, ref: 'Tag' }],
   isActive: { type: Boolean, default: true },
+  share:{
+    type:Boolean,
+    default:false
+  },
   userId: { type: Types.ObjectId, ref: 'User', required: true },
+
 });
 
 
