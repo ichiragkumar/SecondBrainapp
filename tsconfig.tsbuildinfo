@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/config/db.ts","./src/controllers/addnotes.ts","./src/controllers/signin.ts","./src/controllers/signup.ts","./src/middlewares/auth.ts","./src/models/notes.ts","./src/models/user.ts","./src/routes/user.ts","./src/zod/notes.ts","./src/zod/signin.ts","./src/zod/signup.ts"],"errors":true,"version":"5.7.2"}
